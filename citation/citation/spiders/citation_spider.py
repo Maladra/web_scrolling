@@ -9,6 +9,7 @@ class CitationSpider(scrapy.Spider):
             yield {
                 'text' : quote.css('h2 ::text').get(),
                 'author' : quote.css('span.author ::text').getall(),
+                'tags' : quote.css("div.tags ::text").getall()
             }
 
         next_page = response.css('a.nextpostslink::attr(href)').get()
