@@ -1,0 +1,20 @@
+http://www.1001-citations.com/
+
+response.css('h2 ::text').get()
+response.css('span.author ::text').getall()
+response.css('a.nextpostslink::attr(href)').getall()
+
+
+
+
+
+<link rel="next" href="http://www.1001-citations.com/page/2/" />
+<span class='pages'>Page 1 sur 3 818</span>
+<span class='current'>1</span>
+<a class="page larger" href="http://www.1001-citations.com/page/2/">2</a>
+<a class="page larger" href="http://www.1001-citations.com/page/3/">3</a>
+<a class="page larger" href="http://www.1001-citations.com/page/4/">4</a>
+<a class="page larger" href="http://www.1001-citations.com/page/5/">5</a>
+<span class='extend'>…</span>
+<a class="nextpostslink" rel="next" href="http://www.1001-citations.com/page/2/">»</a>
+<a class="last" href="http://www.1001-citations.com/page/3818/">Dernière page »</a>
