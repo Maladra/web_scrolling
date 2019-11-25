@@ -5,7 +5,7 @@ class CitationSpider(scrapy.Spider):
     start_urls = ['http://www.1001-citations.com/page/1/',]
 
     def parse(self, response):
-        for quote in response.css('div'):
+        for quote in response.css('div.entry'):
             yield {
                 'text' : quote.css('h2 ::text').get(),
                 'author' : quote.css('span.author ::text').getall(),

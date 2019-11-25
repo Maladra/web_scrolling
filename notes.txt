@@ -3,7 +3,7 @@ http://www.1001-citations.com/
 response.css('h2 ::text').get()
 response.css('span.author ::text').getall()
 response.css('a.nextpostslink::attr(href)').getall()
-
+FEED_EXPORT_ENCODING
 
 
 
