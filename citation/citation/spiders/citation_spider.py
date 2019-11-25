@@ -6,11 +6,19 @@ class CitationSpider(scrapy.Spider):
 
     def parse(self, response):
         for quote in response.css('div.entry'):
-            yield {
-                'text' : quote.css('h2 ::text').get(),
-                'author' : quote.css('span.author ::text').getall(),
-                'tags' : quote.css("div.tags ::text").getall()
+            try:
+                yield {
+                    'text' : quote.css('h2 ::text').get(),
+                    'author' : quote.css('span.author ::text')[1].get(),
+                    'tags' : quote.css("div.tags ::text").getall()[1::2]
             }
+            except:
+                yield {
+                    'text' : quote.css('h2 ::text').get(),
+                    'author' : quote.css('span.author ::text')[0].get(),
+                    'tags' : quote.css("div.tags ::text").getall()[1::2]
+                }
+
 
         next_page = response.css('a.nextpostslink::attr(href)').get()
         if next_page is not None:
